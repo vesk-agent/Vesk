@@ -1,0 +1,25 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }  # no `cache: pnpm`: it needs a pnpm-lock.yaml, which isn't committed yet
+      - run: pnpm install --frozen-lockfile=false
+      - run: pnpm typecheck
+      - run: pnpm build
+      - name: built CLI runs
+        run: |
+          node packages/cli/dist/index.js help
+          node packages/cli/dist/index.js doctor --json || true
+      - run: pnpm test
+      - run: pnpm test:e2e
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t vesk-agent:ci .
+      - run: docker run --rm vesk-agent:ci help

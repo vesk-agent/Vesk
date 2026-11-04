@@ -1,0 +1,295 @@
+{
+ "about": "The docs' table of contents. The site's /docs pages are generated from this file and the .md files next to it (scripts/sync-core.mjs in the site repo), so both read the same source. kind = feature pages follow one structure: what it is, In the panel, From the terminal (cli: true), Settings (settings: true), Limits and what's approximate. tools/docs_check.mjs checks it.",
+ "groups": [
+  "Start",
+  "Trade",
+  "Launch",
+  "Agent",
+  "Wallets",
+  "Panel",
+  "Trust",
+  "Reference"
+ ],
+ "pages": [
+  {
+   "file": "01-getting-started.md",
+   "group": "Start",
+   "kind": "guide",
+   "summary": "Install, set up in five steps, first rule, paper then live."
+  },
+  {
+   "file": "02-panel-tour.md",
+   "group": "Start",
+   "kind": "guide",
+   "summary": "What every page of the panel does."
+  },
+  {
+   "file": "20-pulse.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "New pairs, Final stretch and Migrated in three live columns, with audits and quick buy."
+  },
+  {
+   "file": "22-pulse-settings.md",
+   "group": "Trade",
+   "kind": "feature",
+   "settings": true,
+   "summary": "Layout, display, row elements, metric colours, hover previews and the quick-buy button."
+  },
+  {
+   "file": "28-coin-page.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Chart, markers, View a trader, tabs, the trade panel and every order type, callouts."
+  },
+  {
+   "file": "29-instant-trade.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "The floating trade panel: drag, snap, collapse, chips, hotkeys."
+  },
+  {
+   "file": "21-trading-settings.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Presets P1-P3, MEV protection, quick amounts, the trading wallet, confirm size, hotkeys."
+  },
+  {
+   "file": "27-copy-trading.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Follow wallets: alert, confirm or auto copies, filters, exits, limits and the live feed."
+  },
+  {
+   "file": "25-migration-snipe.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "summary": "Buy or sell the moment a coin migrates."
+  },
+  {
+   "file": "24-blacklist.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "summary": "Coins, devs, funders and wallets you never want to see or buy."
+  },
+  {
+   "file": "07-exits.md",
+   "group": "Trade",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Timed sells, market-cap targets and stops, take-profit, trailing, timeout."
+  },
+  {
+   "file": "06-launch-and-presets.md",
+   "group": "Launch",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "The launch flow, team wallets, presets, run your coin."
+  },
+  {
+   "file": "05-launch-on-post.md",
+   "group": "Launch",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Launch a coin when an account you watch posts: triggers, the coin, the pair, limits, clash checks and race reports."
+  },
+  {
+   "file": "38-launchpads.md",
+   "group": "Launch",
+   "kind": "reference",
+   "summary": "One adapter per launchpad, what's ready, and what's needed to enable StonkFun."
+  },
+  {
+   "file": "39-claim.md",
+   "group": "Launch",
+   "kind": "feature",
+   "cli": true,
+   "summary": "Creator fees per coin, per asset (paid in the pair's asset), Claim all, and Cleanup for empty token accounts."
+  },
+  {
+   "file": "33-live.md",
+   "group": "Agent",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Watch the agent work: the pipeline step by step, every decision with its reason, and what's left to set up."
+  },
+  {
+   "file": "34-strategy.md",
+   "group": "Agent",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Entry filters with the early-volume trigger, the rug check, the can-sell check, exits and hard limits: every parameter."
+  },
+  {
+   "file": "35-rogue-mode.md",
+   "group": "Agent",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "One hyped launch, many copies: buy every match small within a budget, cut the losers fast."
+  },
+  {
+   "file": "03-tracker.md",
+   "group": "Agent",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "The 24/7 X watcher: live feed, deploy on a post, sources, per-account buy rules."
+  },
+  {
+   "file": "04-snipe-rules.md",
+   "group": "Agent",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Trigger, buy, exits and limits; new-launch rules; chat drafts."
+  },
+  {
+   "file": "10-running-24-7.md",
+   "group": "Agent",
+   "kind": "guide",
+   "summary": "systemd, pm2 or Docker on a small always-on machine."
+  },
+  {
+   "file": "11-telegram.md",
+   "group": "Agent",
+   "kind": "guide",
+   "summary": "Your own bot (self-hosted) or the hosted bot."
+  },
+  {
+   "file": "12-mcp.md",
+   "group": "Agent",
+   "kind": "guide",
+   "summary": "Vesk's tools for other agents, and the OpenClaw skill."
+  },
+  {
+   "file": "08-wallets.md",
+   "group": "Wallets",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Main and imported wallets, funding, folders, the address book, rent."
+  },
+  {
+   "file": "30-wallet-labels.md",
+   "group": "Wallets",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "Your wallets' names and the Team role, labels and images for any wallet, the icon legend."
+  },
+  {
+   "file": "09-holder-access.md",
+   "group": "Wallets",
+   "kind": "feature",
+   "cli": true,
+   "summary": "What holding $VESK unlocks, and what is never gated."
+  },
+  {
+   "file": "23-appearance.md",
+   "group": "Panel",
+   "kind": "feature",
+   "settings": true,
+   "summary": "Themes, the custom editor, fonts, motion, chart colours."
+  },
+  {
+   "file": "31-performance.md",
+   "group": "Panel",
+   "kind": "feature",
+   "settings": true,
+   "summary": "Low resource, Auto and Full speed, and what each changes."
+  },
+  {
+   "file": "32-notifications.md",
+   "group": "Panel",
+   "kind": "feature",
+   "settings": true,
+   "summary": "The stack, a trade from click to fill, the notification centre, sounds, desktop and Do not disturb."
+  },
+  {
+   "file": "13-security.md",
+   "group": "Trust",
+   "kind": "guide",
+   "summary": "Where keys live, what the panel and hosted service can and can't do."
+  },
+  {
+   "file": "14-guardrails.md",
+   "group": "Trust",
+   "kind": "guide",
+   "summary": "The rules in code that no setting turns off."
+  },
+  {
+   "file": "36-honeypot.md",
+   "group": "Trust",
+   "kind": "feature",
+   "cli": true,
+   "settings": true,
+   "summary": "The can-sell check: mint extensions, freeze authority, tax and a simulated sell before non-pump.fun buys."
+  },
+  {
+   "file": "15-faq.md",
+   "group": "Trust",
+   "kind": "guide",
+   "summary": "Short answers to common questions."
+  },
+  {
+   "file": "16-cli.md",
+   "group": "Reference",
+   "kind": "reference",
+   "summary": "Every command and flag."
+  },
+  {
+   "file": "17-config.md",
+   "group": "Reference",
+   "kind": "reference",
+   "summary": "vesk.config.yaml, field by field."
+  },
+  {
+   "file": "18-rpc.md",
+   "group": "Reference",
+   "kind": "reference",
+   "summary": "Why your own RPC matters and how to test it."
+  },
+  {
+   "file": "19-models.md",
+   "group": "Reference",
+   "kind": "reference",
+   "summary": "Bring your own model: what it's used for, providers."
+  },
+  {
+   "file": "26-data-sources.md",
+   "group": "Reference",
+   "kind": "reference",
+   "summary": "Where every Pulse and coin-page number comes from, and what's approximate."
+  },
+  {
+   "file": "37-clustering.md",
+   "group": "Reference",
+   "kind": "reference",
+   "summary": "How bundled and insiders link wallets, and why pools, programs and exchanges never do."
+  },
+  {
+   "file": "40-changelog.md",
+   "group": "Reference",
+   "kind": "reference",
+   "summary": "What changed in the panel, the agent and the docs, newest first."
+  }
+ ]
+}

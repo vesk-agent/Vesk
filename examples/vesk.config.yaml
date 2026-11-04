@@ -1,0 +1,33 @@
+# Copy to ~/.vesk/vesk.config.yaml. Secrets go in env vars or `vesk keys set NAME`, never here.
+rpc:
+  url: https://api.mainnet-beta.solana.com   # works, but slower: use Helius / QuickNode / Triton
+  priorityFeeSol: 0.0005
+  jito: { enabled: false, blockEngineUrl: https://mainnet.block-engine.jito.wtf, tipSol: 0.001 }
+model: { provider: none, model: "" }
+x: { source: off, bearerTokenEnv: X_BEARER_TOKEN, pollIntervalSec: 15 }
+launches: { enabled: false }
+telegram: { enabled: false, botTokenEnv: TELEGRAM_BOT_TOKEN, allowedChatIds: [] }
+limits: { perTradeMaxSol: 0.25, dailySpendCapSol: 1, maxOpenPositions: 6, maxBuysPerDay: 10, minSolReserve: 0.02, killSwitch: false }
+watchlist:
+  - { handle: alpha_calls, enabled: false, mode: ca-in-post, amountSol: 0.1, maxMcapUsd: 50000, slippageBps: 1500, takeProfit: [{ atMultiple: 3, sellPct: 50 }], stopLossPct: 30, maxBuysPerDay: 2 }
+rules: []
+# v26: launch on posts, kept here (or build one in the panel: Rules → Launch on posts, or `vesk rules add --launch-on-post`).
+# Accounts are in priority order. Starts in Confirm mode: each match sends a draft with Launch / Skip.
+launchRules:
+  - id: founders
+    name: Founders, launch on post
+    enabled: false
+    handles: [kilnlabs, maraokafor]          # highest priority first
+    trigger:
+      keywords: [launching, introducing, shipping]
+      exclude: [giveaway, airdrop]
+      patterns: { include: ['\bv\d+(\.\d+)?\b'] }   # Advanced: regular expressions
+      media: any                               # any | image | video | image-or-video
+      contract: forbid                         # skip posts with a contract address
+      priorityHoldSec: 0                       # 0 = instant
+    coin: { naming: model, style: literal, image: post, crop: true }   # naming: model | template | ask (Confirm only)
+    pair: { quote: SOL, fees: creator }        # custom pairs: { quote: USDC, creatorFeePct: 0.25, fees: creator | cashback | split }
+    clash: { action: skip, windowSec: 120, image: true }
+    plan: { mode: standard, devBuySol: 0.2, jitoTipSol: 0 }
+    mode: confirm
+    limits: { maxPerHour: 2, maxPerDay: 5, maxSolPerLaunch: 0.5, maxSolPerDay: 1, cooldownMin: 60 }

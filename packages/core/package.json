@@ -1,0 +1,19 @@
+{
+  "name": "@vesk-agent/core",
+  "version": "0.1.0",
+  "description": "Rules engine, guardrails, CA detection, keystore, RPC, pump.fun/Jupiter execution and the agent loop.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist", "README.md"],
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "https://github.com/vesk-agent/vesk.git", "directory": "packages/core" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": { "@solana/web3.js": "1.98.0", "yaml": "2.6.1" }
+}

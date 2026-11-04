@@ -1,0 +1,19 @@
+{
+  "name": "@vesk-agent/telegram",
+  "version": "0.1.0",
+  "description": "Your own Telegram bot for your own Vesk agent.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist", "README.md"],
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "https://github.com/vesk-agent/vesk.git", "directory": "packages/telegram" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo no tests"
+  },
+  "dependencies": { "@vesk-agent/core": "workspace:*" }
+}
